@@ -110,3 +110,4 @@ app.use((error, request, response, next) => {
       // }
 
       // let weatherToSend = dataToGroom.data.map(day => new Forecast(day.valid_date, day.weather.description));
+      ///
