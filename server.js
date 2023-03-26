@@ -18,63 +18,6 @@ const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => console.log(`running on port ${PORT}`));
 
-//movie endpoint and class
-// app.get('/movies', async (request, response, next) => {
-//   try {
-//     //let api_key = request.query.api_key;
-//     let query = request.query.query;
-
-//     let url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_MOVIE_KEY}&query=${query}`;
-
-//     let movieResults = await axios.get(url);
-//     console.log(movieResults.data.results);
-//     let movieDataToSend = movieResults.data.results.map(mObj => new Movie(mObj));
-
-//     response.status(200).send(movieDataToSend);
-
-//   } catch (error){
-//     next(error);
-//   }
-// })
-
-// class Movie {
-//   constructor(movieObj) {
-//     this.title = movieObj.original_title;
-//       this.overview = movieObj.overview;
-//       this.image = `https://image.tmdb.org/t/p/w500${movieObj.poster_path}`;
-//   }
-// }
-
-// //weather endpoint and class
-// app.get('/weather', async (request, response, next) => {
-
-//     try {
-//       let lat = request.query.lat;
-//       let lon = request.query.lon;
-     
-
-//       //build url
-//       let url = `http://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.REACT_APP_WEATHERBIT_KEY}&lat=${lat}&lon=${lon}`;
-
-//       let dataResults = await axios.get(url);
-//       //console.log(dataResults.data.data);
-//       //groom data for front end
-//       let dataToSend = dataResults.data.data.map(fObj => new Forecast(fObj));
-
-//       response.status(200).send(dataToSend);
-
-
-//     } catch (error) {
-//       next(error);
-//     }
-//   })
-
-// class Forecast {
-//   constructor(fObj) {
-//     this.description = fObj.weather.description;
-//     this.date = fObj.valid_date;
-//   }
-// }
 
 app.get('/movies', getMovies);
 app.get('/weather', getWeather);
